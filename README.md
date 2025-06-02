@@ -1,1 +1,7 @@
-# CNN-Based-AI-Image-Classifie
+The project begins with a data preprocessing step where images are validated based on their file extensions using the imghdr module. To achieve this, the code iterates through image files in each class directory using os.listdir(), verifies the image type and extension, and removes any corrupted or unsupported files to ensure dataset integrity. Next, the dataset is loaded and split into training and validation subsets. For visualization purposes, a grid of sample images is plotted using Matplotlib’s figure and axes objects, employing nested loops to efficiently display multiple images without repetitive code. The main part of the project is a Convolutional Neural Network (CNN) built with TensorFlow Keras’ Sequential API. The model architecture includes multiple layers:
+- Conv2D layers with ReLU activation for spatial feature extraction,
+- MaxPooling2D layers to downsample feature maps and reduce computational complexity,
+- one Flatten layer to convert 2D feature maps into a 1D feature vector,
+- fully connected (Dense) layers, culminating in a final output layer with a softmax activation function to output class probabilities.
+The model is compiled with the Adam optimizer, chosen for its adaptive learning rate properties, using categorical cross-entropy as the loss function appropriate for multi-class classification. Accuracy is used as the primary metric to monitor training performance.
+Finally, the model is trained over multiple epochs, where each epoch represents one full pass through the training dataset. The number of epochs is configurable, allowing control over training duration. During training, the validation set is used to monitor generalization and help prevent overfitting.
